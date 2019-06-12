@@ -10,7 +10,12 @@ import org.junit.jupiter.api.Test;
 public class CatTest {
     @Test
     public void test() throws Exception {
-        Cat cat = new Cat(true, false, false);
+        Cat cat = new Cat();
+        cat.setCute(true);
+        cat.setCute(true);
+        cat.setFat(false);
+        cat.setWhite(false);
+        cat.setWhite(false);
         assertTrue(cat.isCute());
         assertFalse(cat.isFat());
         assertFalse(cat.isWhite());
@@ -19,7 +24,13 @@ public class CatTest {
         field.setAccessible(true);
         assertEquals(0x1, field.get(cat));
 
-        cat = new Cat(true, true, true);
+        cat = new Cat();
+        cat.setCute(true);
+        cat.setCute(true);
+        cat.setFat(true);
+        cat.setFat(true);
+        cat.setWhite(true);
+        cat.setWhite(true);
         assertTrue(cat.isCute());
         assertTrue(cat.isFat());
         assertTrue(cat.isWhite());

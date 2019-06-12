@@ -6,19 +6,15 @@ public class Cat {
     private static int WHITE = 0x4;
     private int properties = 0;
 
-    // ↑ 请勿修改以上部分的代码
+    // ↑ 请勿修改以上部分的代码，请勿添加新的成员变量
     // ↓ 请补全以下代码
+
     /**
-     * 创建一只新的猫咪。
+     * 设置猫咪萌的属性
      *
-     * @param cute 这只猫萌吗？萌为true，不萌为false
-     * @param fat 这只猫胖吗？胖为true，不胖为false
-     * @param white 这只猫白吗？白为true，不白为false
+     * @param cute true为萌，false为不萌
      */
-    public Cat(boolean cute, boolean fat, boolean white) {
-        // 请在此处根据cute/fat/white三个参数
-        // 使用位运算对properties进行设值
-    }
+    public void setCute(boolean cute) {}
 
     /**
      * 这只猫萌吗？
@@ -30,6 +26,13 @@ public class Cat {
     }
 
     /**
+     * 设置猫咪胖的属性
+     *
+     * @param fat true为胖，false为不胖
+     */
+    public void setFat(boolean fat) {}
+
+    /**
      * 这只猫胖吗？
      *
      * @return 胖则返回true，否则返回false
@@ -37,6 +40,13 @@ public class Cat {
     public boolean isFat() {
         // 请在此处使用位运算读取properties，得到猫是否胖的结果
     }
+
+    /**
+     * 设置猫咪白的属性
+     *
+     * @param white true为白，false为不白
+     */
+    public void setWhite(boolean white) {}
 
     /**
      * 这只猫白吗？
@@ -48,7 +58,10 @@ public class Cat {
     }
 
     public static void main(String[] args) {
-        Cat cat = new Cat(true, false, true);
+        Cat cat = new Cat();
+        cat.setCute(true);
+        cat.setFat(true);
+        cat.setWhite(false);
         System.out.println("这只猫萌吗：" + cat.isCute());
         System.out.println("这只猫胖吗：" + cat.isFat());
         System.out.println("这只猫白吗：" + cat.isWhite());
