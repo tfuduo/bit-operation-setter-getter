@@ -25,16 +25,29 @@ public class CatTest {
         assertEquals(0x1, field.get(cat));
 
         cat = new Cat();
-        cat.setCute(true);
-        cat.setCute(true);
-        cat.setFat(true);
-        cat.setFat(true);
-        cat.setWhite(true);
-        cat.setWhite(true);
+        for (int i = 0; i < 100; ++i) {
+            cat.setCute(true);
+            cat.setFat(true);
+            cat.setWhite(true);
+        }
         assertTrue(cat.isCute());
         assertTrue(cat.isFat());
         assertTrue(cat.isWhite());
 
         assertEquals(0x1 | 0x2 | 0x4, field.get(cat));
+
+        cat = new Cat();
+        for (int i = 0; i < 100; ++i) {
+            cat.setCute(true);
+            cat.setFat(true);
+            cat.setWhite(true);
+        }
+        cat.setCute(false);
+        cat.setFat(false);
+        cat.setWhite(false);
+
+        assertFalse(cat.isCute());
+        assertFalse(cat.isFat());
+        assertFalse(cat.isWhite());
     }
 }
