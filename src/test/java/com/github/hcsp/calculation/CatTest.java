@@ -49,5 +49,7 @@ public class CatTest {
         assertFalse(cat.isCute());
         assertFalse(cat.isFat());
         assertFalse(cat.isWhite());
+
+        assertEquals(0, field.get(cat));
     }
 }
