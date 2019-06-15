@@ -1,10 +1,7 @@
 package com.github.hcsp.calculation;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.lang.reflect.Field;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class CatTest {
@@ -15,14 +12,14 @@ public class CatTest {
         cat.setCute(true);
         cat.setFat(false);
         cat.setWhite(false);
-        cat.setWhite(false);
-        assertTrue(cat.isCute());
-        assertFalse(cat.isFat());
-        assertFalse(cat.isWhite());
+        cat.setWhite(true);
+        Assertions.assertTrue(cat.isCute());
+        Assertions.assertFalse(cat.isFat());
+        Assertions.assertTrue(cat.isWhite());
 
         Field field = Cat.class.getDeclaredField("properties");
         field.setAccessible(true);
-        assertEquals(0x1, field.get(cat));
+        Assertions.assertEquals(0x1 | 0x4, field.get(cat));
 
         cat = new Cat();
         for (int i = 0; i < 100; ++i) {
@@ -30,11 +27,11 @@ public class CatTest {
             cat.setFat(true);
             cat.setWhite(true);
         }
-        assertTrue(cat.isCute());
-        assertTrue(cat.isFat());
-        assertTrue(cat.isWhite());
+        Assertions.assertTrue(cat.isCute());
+        Assertions.assertTrue(cat.isFat());
+        Assertions.assertTrue(cat.isWhite());
 
-        assertEquals(0x1 | 0x2 | 0x4, field.get(cat));
+        Assertions.assertEquals(0x1 | 0x2 | 0x4, field.get(cat));
 
         cat = new Cat();
         for (int i = 0; i < 100; ++i) {
@@ -46,10 +43,10 @@ public class CatTest {
         cat.setFat(false);
         cat.setWhite(false);
 
-        assertFalse(cat.isCute());
-        assertFalse(cat.isFat());
-        assertFalse(cat.isWhite());
+        Assertions.assertFalse(cat.isCute());
+        Assertions.assertFalse(cat.isFat());
+        Assertions.assertFalse(cat.isWhite());
 
-        assertEquals(0, field.get(cat));
+        Assertions.assertEquals(0, field.get(cat));
     }
 }
