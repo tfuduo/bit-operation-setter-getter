@@ -69,8 +69,8 @@ public class CatTest {
         cat.setCute(false);
 
         Assertions.assertTrue(cat.isFat());
+        Assertions.assertTrue(cat.isWhite());
         Assertions.assertFalse(cat.isCute());
-        Assertions.assertFalse(cat.isWhite());
 
         Field field = Cat.class.getDeclaredField("properties");
         field.setAccessible(true);
