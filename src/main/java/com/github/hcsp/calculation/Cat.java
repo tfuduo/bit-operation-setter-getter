@@ -74,7 +74,7 @@ public class Cat {
      * @return 白则返回true，否则返回false
      */
     public boolean isWhite() {
-        return ((properties &=WHITE)!=0);
+        return ((properties & WHITE)!=0);
     }
 
     public static void main(String[] args) {
