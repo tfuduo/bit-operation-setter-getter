@@ -15,7 +15,7 @@ public class Cat {
      * @param cute true为萌，false为不萌
      */
     public void setCute(boolean cute) {
-        if(cute) properties |= CUTE;
+        if(cute) { properties |= CUTE; } else { properties = 0; }
     }
 
     /**
