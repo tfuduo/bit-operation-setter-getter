@@ -1,7 +1,7 @@
 package com.github.hcsp.calculation;
 
 public class Cat {
-        private static int CUTE = 0x1;
+    private static int CUTE = 0x1;
     private static int FAT = 0x2;
     private static int WHITE = 0x4;
     private int properties = 0;
@@ -15,7 +15,7 @@ public class Cat {
      * @param cute true为萌，false为不萌
      */
     public void setCute(boolean cute) {
-        CUTE = cute ? CUTE : 0;
+        properties = cute ? (CUTE | properties) : properties;
     }
 
     /**
@@ -24,7 +24,7 @@ public class Cat {
      * @return 萌则返回true，否则返回false
      */
     public boolean isCute() {
-        return (CUTE | properties) != 0;
+        return (CUTE & properties) != 0;
     }
 
     /**
@@ -33,7 +33,7 @@ public class Cat {
      * @param fat true为胖，false为不胖
      */
     public void setFat(boolean fat) {
-        FAT = fat ? FAT : 0;
+        properties = fat ? (FAT | properties) : properties;
     }
 
     /**
@@ -42,7 +42,7 @@ public class Cat {
      * @return 胖则返回true，否则返回false
      */
     public boolean isFat() {
-        return (FAT | properties) != 0;
+        return (FAT & properties) != 0;
     }
 
     /**
@@ -51,7 +51,7 @@ public class Cat {
      * @param white true为白，false为不白
      */
     public void setWhite(boolean white) {
-        WHITE = white ? WHITE : 0;
+        properties = white ? (WHITE | properties) : properties;
     }
 
     /**
@@ -60,7 +60,7 @@ public class Cat {
      * @return 白则返回true，否则返回false
      */
     public boolean isWhite() {
-        return (WHITE | properties) != 0;
+        return (WHITE & properties) != 0;
     }
 
     public static void main(String[] args) {
