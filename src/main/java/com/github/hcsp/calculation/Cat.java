@@ -15,7 +15,7 @@ public class Cat {
      * @param cute true为萌，false为不萌
      */
     public void setCute(boolean cute) {
-        properties = cute ? (CUTE | properties) : properties;
+        properties = cute ? (CUTE | properties) : (~CUTE & properties);
     }
 
     /**
@@ -33,7 +33,7 @@ public class Cat {
      * @param fat true为胖，false为不胖
      */
     public void setFat(boolean fat) {
-        properties = fat ? (FAT | properties) : properties;
+        properties = fat ? (FAT | properties) : (~FAT & properties);
     }
 
     /**
@@ -51,7 +51,7 @@ public class Cat {
      * @param white true为白，false为不白
      */
     public void setWhite(boolean white) {
-        properties = white ? (WHITE | properties) : properties;
+        properties = white ? (WHITE | properties) : (~WHITE & properties);
     }
 
     /**
