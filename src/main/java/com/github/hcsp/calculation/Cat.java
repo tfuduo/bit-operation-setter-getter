@@ -66,12 +66,10 @@ public class Cat {
     }
 
     public void setAttribute(boolean attr,int attrValue){
-        boolean ifExist=(properties & attrValue)!=0;
-        if(attr && !ifExist ){
-            properties+=attrValue;
-        }
-        if(!attr && ifExist){
-            properties-=attrValue;
+        if(attr){
+            properties|=attrValue;
+        }else{
+            properties&=(~attrValue);
         }
     }
 
