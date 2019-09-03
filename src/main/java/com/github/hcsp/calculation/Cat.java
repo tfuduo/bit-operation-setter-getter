@@ -14,65 +14,43 @@ public class Cat {
      *
      * @param cute true为萌，false为不萌
      */
-    public void setCute(boolean cute) {
-        //和CUTE 进行或操作
-        setAttribute(CUTE, cute);
-    }
+    public void setCute(boolean cute) {}
 
     /**
      * 这只猫萌吗？请在此处使用位运算读取properties，得到猫是否萌的结果
      *
      * @return 萌则返回true，否则返回false
      */
-    public boolean isCute() {
-        //和1进行按位与操作
-        return (properties&CUTE) !=0;
-    }
+    public boolean isCute() {}
 
     /**
      * 使用位运算设置猫咪胖的属性
      *
      * @param fat true为胖，false为不胖
      */
-    public void setFat(boolean fat) {
-        //和FAT 进行或操作
-        setAttribute(FAT, fat);
-    }
+    public void setFat(boolean fat) {}
 
     /**
      * 这只猫胖吗？请在此处使用位运算读取properties，得到猫是否胖的结果
      *
      * @return 胖则返回true，否则返回false
      */
-    public boolean isFat() {
-        return (properties&FAT) !=0;
-    }
+    public boolean isFat() {}
 
     /**
      * 使用位运算设置猫咪白的属性
      *
      * @param white true为白，false为不白
      */
-    public void setWhite(boolean white) {
-        setAttribute(WHITE, white);
-    }
+    public void setWhite(boolean white) {}
 
     /**
      * 这只猫白吗？请在此处使用位运算读取properties，得到猫是否白的结果
      *
      * @return 白则返回true，否则返回false
      */
-    public boolean isWhite() {
-        return (properties&WHITE) != 0;
-    }
+    public boolean isWhite() {}
 
-    public void setAttribute(int attrValue, boolean attr){
-        if(attr){
-            properties |= attrValue;
-        }else {
-            properties &= (~attrValue);
-        }
-    }
     public static void main(String[] args) {
         Cat cat = new Cat();
         cat.setCute(true);
