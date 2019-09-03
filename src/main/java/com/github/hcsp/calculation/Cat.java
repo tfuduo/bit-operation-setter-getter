@@ -63,7 +63,7 @@ public class Cat {
      * @return 白则返回true，否则返回false
      */
     public boolean isWhite() {
-        return (properties&WHITE) == 1;
+        return (properties&WHITE) != 0;
     }
 
     public void setAttribute(int attrValue, boolean attr){
