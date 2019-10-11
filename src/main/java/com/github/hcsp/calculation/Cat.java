@@ -18,7 +18,7 @@ public class Cat {
         if (cute) {
             properties |= CUTE;
         } else {
-            properties &= CUTE;//(~CUTE);
+            properties &= (~CUTE);
         }
     }
 
