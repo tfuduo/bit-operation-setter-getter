@@ -14,42 +14,54 @@ public class Cat {
      *
      * @param cute true为萌，false为不萌
      */
-    public void setCute(boolean cute) {}
+    public void setCute(boolean cute) {
+        properties = BitUtil.setBit(properties, CUTE, cute);
+    }
 
     /**
      * 这只猫萌吗？请在此处使用位运算读取properties，得到猫是否萌的结果
      *
      * @return 萌则返回true，否则返回false
      */
-    public boolean isCute() {}
+    public boolean isCute() {
+        return BitUtil.check(properties, CUTE);
+    }
 
     /**
      * 使用位运算设置猫咪胖的属性
      *
      * @param fat true为胖，false为不胖
      */
-    public void setFat(boolean fat) {}
+    public void setFat(boolean fat) {
+        properties = BitUtil.setBit(properties, FAT, fat);
+    }
 
     /**
      * 这只猫胖吗？请在此处使用位运算读取properties，得到猫是否胖的结果
      *
      * @return 胖则返回true，否则返回false
      */
-    public boolean isFat() {}
+    public boolean isFat() {
+        return BitUtil.check(properties, FAT);
+    }
 
     /**
      * 使用位运算设置猫咪白的属性
      *
      * @param white true为白，false为不白
      */
-    public void setWhite(boolean white) {}
+    public void setWhite(boolean white) {
+        properties = BitUtil.setBit(properties, WHITE, white);
+    }
 
     /**
      * 这只猫白吗？请在此处使用位运算读取properties，得到猫是否白的结果
      *
      * @return 白则返回true，否则返回false
      */
-    public boolean isWhite() {}
+    public boolean isWhite() {
+        return BitUtil.check(properties, WHITE);
+    }
 
     public static void main(String[] args) {
         Cat cat = new Cat();
@@ -59,5 +71,18 @@ public class Cat {
         System.out.println("这只猫萌吗：" + cat.isCute());
         System.out.println("这只猫胖吗：" + cat.isFat());
         System.out.println("这只猫白吗：" + cat.isWhite());
+    }
+}
+
+class BitUtil{
+    public static boolean check(int flag, int bit){
+        return (flag & bit) == bit;
+    }
+    public static int setBit(int flag, int bit, boolean value){
+        if(value){
+            return flag | bit;
+        }else{
+            return flag & (~bit);
+        }
     }
 }
