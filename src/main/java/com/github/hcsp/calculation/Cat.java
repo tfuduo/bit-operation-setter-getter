@@ -1,5 +1,7 @@
 package com.github.hcsp.calculation;
 
+import java.util.Currency;
+
 public class Cat {
     private static int CUTE = 0x1;
     private static int FAT = 0x2;
@@ -8,48 +10,56 @@ public class Cat {
 
     // ↑ 请勿修改以上部分的代码，请勿添加新的成员变量
     // ↓ 请补全以下代码
-
+    // xx1是萌 x1x是肥 1xx是白
     /**
      * 使用位运算设置猫咪萌的属性
      *
      * @param cute true为萌，false为不萌
      */
-    public void setCute(boolean cute) {}
+    public void setCute(boolean cute) {
+        //如果true  properties或001，false properties与110
+        //因为是与只有1&1=1，所以不会影响本来properties的其他属性
+        properties = cute? properties|CUTE  : properties&(~CUTE) ;
+    }
 
     /**
      * 这只猫萌吗？请在此处使用位运算读取properties，得到猫是否萌的结果
      *
      * @return 萌则返回true，否则返回false
      */
-    public boolean isCute() {}
+    public boolean isCute() { return (properties&CUTE)==CUTE ;}
 
     /**
      * 使用位运算设置猫咪胖的属性
      *
      * @param fat true为胖，false为不胖
      */
-    public void setFat(boolean fat) {}
+    public void setFat(boolean fat) {
+        properties = fat? properties|FAT  : properties&(~FAT) ;
+    }
 
     /**
      * 这只猫胖吗？请在此处使用位运算读取properties，得到猫是否胖的结果
      *
      * @return 胖则返回true，否则返回false
      */
-    public boolean isFat() {}
+    public boolean isFat() { return (properties&FAT)==FAT ;}
 
     /**
      * 使用位运算设置猫咪白的属性
      *
      * @param white true为白，false为不白
      */
-    public void setWhite(boolean white) {}
+    public void setWhite(boolean white) {
+        properties = white? properties|WHITE  : properties&(~WHITE) ;
+    }
 
     /**
      * 这只猫白吗？请在此处使用位运算读取properties，得到猫是否白的结果
      *
      * @return 白则返回true，否则返回false
      */
-    public boolean isWhite() {}
+    public boolean isWhite() { return (properties&WHITE)==WHITE ;}
 
     public static void main(String[] args) {
         Cat cat = new Cat();
