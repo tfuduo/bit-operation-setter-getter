@@ -18,6 +18,7 @@ public class Cat {
         if(cute){
             properties=properties | CUTE;
         }
+        else{properties=properties&(~CUTE);}
     }
 
     /**
@@ -37,6 +38,7 @@ public class Cat {
      */
     public void setFat(boolean fat) {
         if(fat){properties=properties|FAT;}
+        else{properties=properties&(~FAT);}
     }
 
     /**
@@ -58,6 +60,7 @@ public class Cat {
      */
     public void setWhite(boolean white) {
         if(white){properties=properties|WHITE;}
+        else{properties=properties&(~WHITE);}
     }
 
     /**
