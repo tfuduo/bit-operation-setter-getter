@@ -57,7 +57,7 @@ public class Cat {
      * @param white true为白，false为不白
      */
     public void setWhite(boolean white) {
-        if(white){properties=properties|4;}
+        if(white){properties=properties|WHITE;}
     }
 
     /**
