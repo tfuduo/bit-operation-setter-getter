@@ -9,71 +9,47 @@ public class Cat {
     // ↑ 请勿修改以上部分的代码，请勿添加新的成员变量
     // ↓ 请补全以下代码
 
-   /**
+    /**
      * 使用位运算设置猫咪萌的属性
      *
      * @param cute true为萌，false为不萌
      */
-    public void setCute(boolean cute) {
-        if (cute) {
-            properties |= CUTE;
-        } else {
-            properties &= ~CUTE;
-        }
-    }
+    public void setCute(boolean cute) {}
 
     /**
      * 这只猫萌吗？请在此处使用位运算读取properties，得到猫是否萌的结果
      *
      * @return 萌则返回true，否则返回false
      */
-    public boolean isCute() {
-        return (CUTE & properties) == CUTE;
-    }
+    public boolean isCute() {}
 
     /**
      * 使用位运算设置猫咪胖的属性
      *
      * @param fat true为胖，false为不胖
      */
-    public void setFat(boolean fat) {
-        if (fat) {
-            properties |= FAT;
-        }else {
-            properties &= ~FAT;
-        }
-    }
+    public void setFat(boolean fat) {}
 
     /**
      * 这只猫胖吗？请在此处使用位运算读取properties，得到猫是否胖的结果
      *
      * @return 胖则返回true，否则返回false
      */
-    public boolean isFat() {
-        return (FAT & properties) == FAT;
-    }
+    public boolean isFat() {}
 
     /**
      * 使用位运算设置猫咪白的属性
      *
      * @param white true为白，false为不白
      */
-    public void setWhite(boolean white) {
-        if (white) {
-            properties |= WHITE;
-        }else {
-            properties &= ~WHITE;
-        }
-    }
+    public void setWhite(boolean white) {}
 
     /**
      * 这只猫白吗？请在此处使用位运算读取properties，得到猫是否白的结果
      *
      * @return 白则返回true，否则返回false
      */
-    public boolean isWhite() {
-        return (WHITE & properties) == WHITE;
-    }
+    public boolean isWhite() {}
 
     public static void main(String[] args) {
         Cat cat = new Cat();
